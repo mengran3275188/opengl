@@ -1,5 +1,8 @@
 .vs
 *.obj
+*.tlog
+*.log
+*.idb
 obj/
 bin/
 

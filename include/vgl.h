@@ -8,6 +8,11 @@
 
 #include <SOIL.h>
 
+#include <glm/glm.hpp>
+
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #define BUFFER_OFFSET(a) ((void*)(a))
 
 #endif /* __VGL_H__ */

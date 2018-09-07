@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\Projects\LearnOpengl\lib\glfw\include;E:\Projects\LearnOpengl\include\SimpleOpenGLImageLibrary;E:\Projects\LearnOpengl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Github\opengl\include;E:\Github\opengl\lib\glfw\include;E:\Github\opengl\include\SimpleOpenGLImageLibrary;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>E:\Projects\LearnOpengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
