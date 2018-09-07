@@ -16,6 +16,11 @@ const GLuint NumVertices = 6;
 
 const GLuint Width = 800, Height = 600;
 
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+void do_movement();
+
 void
 init(void)
 {
@@ -129,8 +134,6 @@ init(void)
 	glm::mat4 model;
 	model = glm::rotate(model, -55.0f, glm::vec3(1.0f, 0.0f, 0.0f));
 
-	glm::mat4 view;
-	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 
 	glm::mat4 projection;
 	projection = glm::perspective(45.0f, (float)(Width / Height), 0.1f, 100.0f);
@@ -138,8 +141,6 @@ init(void)
 	GLuint modelLoc = glGetUniformLocation(Program, "model");
 	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
-	GLuint viewLoc = glGetUniformLocation(Program, "view");
-	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 
 	GLuint projectionLoc = glGetUniformLocation(Program, "projection");
 	glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
@@ -155,6 +156,16 @@ display(void)
 	glBindBuffer(GL_ARRAY_BUFFER, Buffers[ArrayBuffer]);
 	glBindVertexArray(VAOs[Triangles]);
 	//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+	glm::mat4 view;
+	GLfloat radius = 10.0f;
+	GLfloat camX = sin(glfwGetTime()) * radius;
+	GLfloat camZ = cos(glfwGetTime()) * radius;
+
+	view = glm::lookAt(glm::vec3(camX, 0.0f, camZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	GLuint viewLoc = glGetUniformLocation(Program, "view");
+	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+
 	glm::vec3 cubePositions[] = {
 		glm::vec3(0.0f,  0.0f,  0.0f),
 		glm::vec3(2.0f,  5.0f, -15.0f),
@@ -197,6 +208,10 @@ main(int argc, char** argv)
 
 	glfwMakeContextCurrent(window);
 	gl3wInit();
+
+	glfwSetKeyCallback(window, key_callback);
+	glfwSetCursorPosCallback(window, mouse_callback);
+	glfwSetScrollCallback(window, scroll_callback);
 
 	init();
 
