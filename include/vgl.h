@@ -13,6 +13,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include <Camera.h>
+
 #define BUFFER_OFFSET(a) ((void*)(a))
 
 #endif /* __VGL_H__ */
