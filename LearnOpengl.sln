@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Light-Phong", "Light-Phong\LearnOpengl.vcxproj", "{CF9A81A1-0633-4ACF-AAEF-A9A92CFE140E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Light-Gouraud", "Light-Gouraud\Light-Gouraud.vcxproj", "{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{CF9A81A1-0633-4ACF-AAEF-A9A92CFE140E}.Release|x64.Build.0 = Release|x64
 		{CF9A81A1-0633-4ACF-AAEF-A9A92CFE140E}.Release|x86.ActiveCfg = Release|Win32
 		{CF9A81A1-0633-4ACF-AAEF-A9A92CFE140E}.Release|x86.Build.0 = Release|Win32
+		{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}.Debug|x64.ActiveCfg = Debug|x64
+		{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}.Debug|x64.Build.0 = Debug|x64
+		{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}.Debug|x86.ActiveCfg = Debug|Win32
+		{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}.Debug|x86.Build.0 = Debug|Win32
+		{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}.Release|x64.ActiveCfg = Release|x64
+		{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}.Release|x64.Build.0 = Release|x64
+		{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}.Release|x86.ActiveCfg = Release|Win32
+		{70DDEA2E-79EC-40BA-96AE-404CEC09B64E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -111,23 +111,8 @@ init(void)
 
 	glBindVertexArray(0);
 
-
-	ShaderInfo  shaders[] =
-	{
-		{ GL_VERTEX_SHADER, "media/shaders/light/box.vert" },
-		{ GL_FRAGMENT_SHADER, "media/shaders/light/box.frag" },
-		{ GL_NONE, NULL }
-	};
-
-	ShaderInfo  lightShaders[] =
-	{
-		{ GL_VERTEX_SHADER, "media/shaders/light/light.vert" },
-		{ GL_FRAGMENT_SHADER, "media/shaders/light/light.frag" },
-		{ GL_NONE, NULL }
-	};
-
-	Program = new Shader("media/shaders/light/box.vert", "media/shaders/light/box.frag");
-	LightProgram = new Shader("media/shaders/light/light.vert", "media/shaders/light/light.frag");
+	Program = new Shader("media/shaders/light/phong/box.vert", "media/shaders/light/phong/box.frag");
+	LightProgram = new Shader("media/shaders/light/phong/light.vert", "media/shaders/light/phong/light.frag");
 }
 void
 display(void)
