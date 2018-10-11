@@ -150,8 +150,7 @@ display(void)
 	Program->setFloat3("ViewPos", camera.Position.x, camera.Position.y, camera.Position.z);
 
 	glm::vec3 lightPos = glm::vec3(0.0f, 1.0f, 0.0f);
-	glm::vec4 viewLightPos = view * glm::vec4(lightPos, 1.0f);
-	Program->setFloat3("LightPos", viewLightPos.x, viewLightPos.y, viewLightPos.z);
+	Program->setFloat3("lightpos", lightPos.x, lightPos.y, lightPos.z);
 
 	glm::vec3 cubePosition = glm::vec3(0.0f, 0.0f, 0.0f);
 
