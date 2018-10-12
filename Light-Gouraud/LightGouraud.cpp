@@ -136,6 +136,7 @@ display(void)
 	Program->setFloat3("LightColor", 1.0f, 1.0f, 1.0f);
 
 
+
 	LightProgram->use();
 	LightProgram->setMatrix4fv("projection", projection);
 
@@ -149,7 +150,7 @@ display(void)
 	Program->setMatrix4fv("view", view);
 	Program->setFloat3("ViewPos", camera.Position.x, camera.Position.y, camera.Position.z);
 
-	glm::vec3 lightPos = glm::vec3(0.0f, 1.0f, 0.0f);
+	glm::vec3 lightPos = glm::vec3(0.5f, 1.0f, 0.0f);
 	Program->setFloat3("lightpos", lightPos.x, lightPos.y, lightPos.z);
 
 	glm::vec3 cubePosition = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -167,8 +168,7 @@ display(void)
 	LightProgram->setMatrix4fv("view", view);
 
 	glm::mat4 lightModel = glm::mat4();
-	glm::vec3 lightPosition = glm::vec3(0.0f, 1.0f, 0.0f);
-	lightModel = glm::translate(lightModel, lightPosition);
+	lightModel = glm::translate(lightModel, lightPos);
 	lightModel = glm::scale(lightModel, glm::vec3(0.2f));
 	LightProgram->setMatrix4fv("model", lightModel);
 	glDrawArrays(GL_TRIANGLES, 0, 36);
