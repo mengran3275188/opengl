@@ -35,6 +35,10 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void do_movement();
 
+void TestDai(int(*a)[4])
+{
+}
+
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 bool keys[1024];
 
@@ -44,6 +48,7 @@ GLfloat lastFrame = 0.0f;
 void
 init(void)
 {
+	int(*a)[4] = new int{ 1, 2,3,4 };
 	GLfloat vertices[] = {
 		// postions           // normals           // texture coords
 		-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f,  0.0f,
